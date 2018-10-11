@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2018 at 08:20 AM
+-- Generation Time: Oct 11, 2018 at 06:31 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -40,8 +40,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`) VALUES
-(3, '', 'admin', 'c33367701511b4f6020ec61ded352059'),
-(4, '', 'admin', 'c33367701511b4f6020ec61ded352059');
+(1, 'Admin', 'admin', 'c33367701511b4f6020ec61ded352059'),
+(2, 'Ismoyo', 'ind2906', '9e90765e334a22ab944b019bc5fa1ad4');
 
 -- --------------------------------------------------------
 
@@ -58,6 +58,13 @@ CREATE TABLE `anggota` (
   `email` varchar(30) NOT NULL,
   `password` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `anggota`
+--
+
+INSERT INTO `anggota` (`id_anggota`, `nama_anggota`, `gender`, `no_tlpn`, `alamat`, `email`, `password`) VALUES
+(1, 'Faris Hendra', 'laki-laki', '012345678911', 'alam sutra', 'faris.hendra@gmail.com', '123456');
 
 -- --------------------------------------------------------
 
@@ -80,26 +87,12 @@ CREATE TABLE `buku` (
   `status_buku` enum('1','0') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `ci_sessions`
+-- Dumping data for table `buku`
 --
 
-CREATE TABLE `ci_sessions` (
-  `id` varchar(40) NOT NULL,
-  `ip_address` varchar(45) NOT NULL,
-  `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `data` blob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `ci_sessions`
---
-
-INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
-('6fpiqnlnn2fgv2da0tfm8q8s12', '::1', 1537613891, 0x5f5f63695f6c6173745f726567656e65726174657c693a313533373631333839313b),
-('f5au047v3hms9uim2c2qunk5vp', '::1', 1537613878, 0x5f5f63695f6c6173745f726567656e65726174657c693a313533373631333837373b);
+INSERT INTO `buku` (`id_buku`, `id_kategori`, `judul_buku`, `pengarang`, `thn_terbit`, `penerbit`, `isbn`, `jumlah_buku`, `lokasi`, `gambar`, `tgl_input`, `status_buku`) VALUES
+(1, 1, 'PHP & MySql Secara Otodidak', 'Anhar', '2010-02-18', 'MediaKita', '9797942414, 9789797942410', 10, 'Rak 1', '', '2018-10-04', '1');
 
 -- --------------------------------------------------------
 
@@ -111,6 +104,14 @@ CREATE TABLE `kategori` (
   `id_kategori` int(5) NOT NULL,
   `nama_kategori` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
+(6209, 'Umum'),
+(23131, 'Teknologi');
 
 -- --------------------------------------------------------
 
@@ -149,25 +150,6 @@ CREATE TABLE `transaksi` (
   `status_peminjaman` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `username` varchar(255) NOT NULL DEFAULT '',
-  `email` varchar(255) NOT NULL DEFAULT '',
-  `password` varchar(255) NOT NULL DEFAULT '',
-  `avatar` varchar(255) DEFAULT 'default.jpg',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `is_admin` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `is_confirmed` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `is_deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Indexes for dumped tables
 --
@@ -191,13 +173,6 @@ ALTER TABLE `buku`
   ADD PRIMARY KEY (`id_buku`);
 
 --
--- Indexes for table `ci_sessions`
---
-ALTER TABLE `ci_sessions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `ci_sessions_timestamp` (`timestamp`);
-
---
 -- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
@@ -216,12 +191,6 @@ ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_pinjam`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -229,25 +198,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_admin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id_anggota` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_anggota` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id_buku` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_buku` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kategori` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23132;
 
 --
 -- AUTO_INCREMENT for table `peminjaman`
@@ -260,12 +229,6 @@ ALTER TABLE `peminjaman`
 --
 ALTER TABLE `transaksi`
   MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
