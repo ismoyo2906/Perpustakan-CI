@@ -1,9 +1,11 @@
+
+
 <div class="page-header">
 	<h3>Dashboard</h3>
 </div>
 <div class="row">
 	<div class="col-lg-3 col-md-6">
-		<div class="pane panel-primary">
+		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<div class="row">
 					<div class="col-xs-3">
@@ -19,8 +21,8 @@
 			</div>
 			<a href="<?php echo base_url().'admin/buku'?>">
 				<div class="panel-footer">
-					<span class="pull-left">View Details</span>
-					<span class="pull-right"></span><i class="glyphicon glyphicon-arrow-right"></i></span>
+					<span class="pull-left"> View Details </span>
+					<span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
 				<div class="clearfix"></div>
 			</div>
 		</a>
@@ -28,7 +30,7 @@
 </div>
 
 	<div class="col-lg-3 col-md-6">
-		<div class="pane panel-succces">
+		<div class="panel panel-success">
 			<div class="panel-heading">
 				<div class="row">
 					<div class="col-xs-3">
@@ -44,8 +46,8 @@
 			</div>
 			<a href="<?php echo base_url().'admin/anggota'?>">
 				<div class="panel-footer">
-					<span class="pull-left">View Details</span>
-					<span class="pull-right"></span><i class="glyphicon glyphicon-arrow-right"></i></span>
+					<span class="pull-left"> View Details </span>
+					<span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
 				<div class="clearfix"></div>
 			</div>
 		</a>
@@ -69,8 +71,8 @@
 			</div>
 			<a href="<?php echo base_url().'admin/peminjaman'?>">
 				<div class="panel-footer">
-					<span class="pull-left">View Details</span>
-					<span class="pull-right"></span><i class="glyphicon glyphicon-arrow-right"></i></span>
+					<span class="pull-left"> View Details </span>
+					<span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
 				<div class="clearfix"></div>
 			</div>
 		</a>
@@ -94,7 +96,7 @@
 			</div>
 			<a href="<?php echo base_url().'admin/peminjaman'?>">
 				<div class="panel-footer">
-					<span class="pull-left">View Details</span>
+					<span class="pull-left"> View Details </span>
 					<span class="pull-right"><i class="glyphicon glyphicon-arrow-right"></i></span>
 				<div class="clearfix"></div>
 			</div>
@@ -109,8 +111,8 @@
 	<div class="col-lg-4">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-tittle" style="font-size: 18px; font-weight: bold"<b><i class="glyphicon glyphicon-random arrow-right"></i>Buku</h3>
-							</
+				<h3 class="panel-tittle" style="font-size: 18px; font-weight: bold"<b><i class="glyphicon glyphicon-random arrow-right"></i> Buku </h3>
+			</div>
 			<div class="panel-body">
 				<div class="list-group">
 					<?php foreach($buku as $b){ ?>
@@ -130,7 +132,7 @@
 	<div class="col-lg-3">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-tittle" style="font-size: 18px; font-weight: bold"<b><i class="glyphicon glyphicon-user o"></i>Anggota Terbaru</h3>
+				<h3 class="panel-tittle" style="font-size: 18px; font-weight: bold"<b><i class="glyphicon glyphicon-user o"></i> Anggota Terbaru </h3>
 		</div>
 			<div class="panel-body">
 				<div class="list-group">
@@ -151,7 +153,7 @@
 	<div class="col-lg-5">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-tittle" style="font-size: 18px; font-weight: bold"<b><i class="glyphicon glyphicon-sort"></i>Peminjaman Terakhir</h3>
+				<h3 class="panel-tittle" style="font-size: 18px; font-weight: bold"<b><i class="glyphicon glyphicon-sort"></i> Peminjaman Terakhir </h3>
 		</div>
 			<div class="panel-body">
 				<div class="table-responsive">
